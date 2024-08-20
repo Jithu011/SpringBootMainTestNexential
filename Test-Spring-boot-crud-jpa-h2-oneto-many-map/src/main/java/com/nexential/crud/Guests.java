@@ -10,7 +10,7 @@ int id;
 String name;
 @Column(name="age")
 int age;
-@ManyToOne
+@ManyToOne(fetch=FetchType.LAZY)
 @JoinColumn(name="CheckIn_id")
 CheckIn checkin;
 public int getId() {

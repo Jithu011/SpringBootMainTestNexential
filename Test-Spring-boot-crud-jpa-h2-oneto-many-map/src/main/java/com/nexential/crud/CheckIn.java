@@ -3,14 +3,14 @@ import java.util.List;
 
 import jakarta.persistence.*;
 @Entity
-@Table(name="check_in")
+@Table(name="check_in_details")
 public class CheckIn {
 @Id
 @GeneratedValue(strategy=GenerationType.IDENTITY)
 int id;
 @Column(name="noOfGuests")
 int no;
-@OneToMany(mappedBy="check_in")
+@OneToMany(mappedBy="checkin",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
 List<Guests> guests;
 public int getId() {
 	return id;
